@@ -47,27 +47,14 @@ ORDER BY
     from_date DESC;
 
 -- Who's Ready for a Mentor?
-
-
-SELECT
-    first_name, last_name,
-    COUNT( last_name)
-FROM
-    Part1A
-GROUP BY
-    first_name, last_name
---HAVING
---    COUNT( last_name )> 1
-ORDER BY
-    last_name;
-
-
-
-select COUNT(first_name)
-FROM Part1A;
---WHERE (birth_date BETWEEN '1952-01-01' AND '1955-12-31') --'1955-12-31';
---AND (hire_date BETWEEN '1985-01-01' AND '1988-12-31');
-
-Employees - emp_no, first last names;
-TItles - emp_no, title; from_date;
-Salaries - emp_no, salary
+SELECT e.emp_no,
+	e.first_name,
+	e.last_name,
+	t.title,
+	t.from_date,
+	t.to_date
+	INTO Part1C
+FROM employees as e
+INNER JOIN titles as t
+ON (e.emp_no = t.emp_no)
+WHERE (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31') AND (t.to_date = '9999-01-01');

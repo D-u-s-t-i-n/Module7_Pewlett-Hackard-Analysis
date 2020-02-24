@@ -193,3 +193,30 @@ INNER JOIN dept_emp AS de
 ON (ce.emp_no = de.emp_no)
 INNER JOIN departments AS d
 ON (de.dept_no = d.dept_no);
+
+
+-- Challenge Check
+
+
+SELECT
+    first_name, last_name,
+    COUNT( last_name)
+FROM
+    Part1A
+GROUP BY
+    first_name, last_name
+--HAVING
+--    COUNT( last_name )> 1
+ORDER BY
+    last_name;
+
+
+
+select COUNT(first_name)
+FROM Part1A;
+--WHERE (birth_date BETWEEN '1952-01-01' AND '1955-12-31') --'1955-12-31';
+--AND (hire_date BETWEEN '1985-01-01' AND '1988-12-31');
+
+Employees - emp_no, first last names;
+TItles - emp_no, title; from_date;
+Salaries - emp_no, salary
