@@ -18,10 +18,10 @@ If more time for analysis was given, I would look into the number of retirees an
 Please refer to EmployeeDB.png
 
 ## Code for the requested queries
-- Part 1A - Number of [titles] Retiring
+- Part 1A - Number of [titles] Retiring  
 
--- Generate Initial Retirement Table (InitRetire.csv)
-'''
+-- Generate Initial Retirement Table (InitRetire.csv)  
+```
 SELECT e.emp_no,
 	e.first_name,
 	e.last_name,
@@ -35,16 +35,17 @@ ON (e.emp_no = s.emp_no)
 INNER JOIN titles as t
 ON (e.emp_no = t.emp_no)
 WHERE (e.birth_date BETWEEN '1952-01-01' AND '1955-12-31') AND (t.to_date = '9999-01-01');
-'''
--- 1A Example output: 
+```
+-- 1A Example output:  
 emp_no	first_name	last_name	title	from_date	salary
 10194	Josyula	Hofmeyr	Senior Staff	2/14/2002	64941
 10001	Georgi	Facello	Senior Engineer	6/26/1986	60117
 10004	Chirstian	Koblick	Senior Engineer	12/1/1995	40054
 10005	Kyoichi	Maliniak	Senior Staff	9/12/1996	78228
 
-- Part 1B - Only the Most Recent Titles
--- Delete duplicates. DELETE 1265 returned.
+- Part 1B - Only the Most Recent Titles  
+-- Delete duplicates. DELETE 1265 returned.  
+```
 DELETE
 FROM
 	part1a a
@@ -62,7 +63,7 @@ FROM
     Part1A
 GROUP BY
     title
-
+```
 -- 1B Example output CSV:
 emp_no	first_name	last_name	title	from_date	salary
 10194	Josyula	Hofmeyr	Senior Staff	2/14/2002	64941
