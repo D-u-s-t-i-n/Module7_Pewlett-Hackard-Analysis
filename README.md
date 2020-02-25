@@ -80,6 +80,7 @@ emp_no	first_name	last_name	title	from_date	salary
 "Senior Staff"	"24466"
 "Technique Leader"	"3510"
 
+```
 -- 1B Frequency count of titles (ordered by date)
 SELECT
     first_name, last_name, title, count(title), from_date
@@ -89,9 +90,12 @@ GROUP BY
     first_name, last_name, title, from_date
 ORDER BY 
     from_date DESC;
+```
 
 -- 1B Example output descending by date:
 I'm unable to copy/paste data output window, unless it is saved in table schema. Please advise.
+
+```
 
 - Part 1C - Who's Ready for a Mentor?
 SELECT e.emp_no,
@@ -105,6 +109,7 @@ FROM employees as e
 INNER JOIN titles as t
 ON (e.emp_no = t.emp_no)
 WHERE (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31') AND (t.to_date = '9999-01-01');
+```
 
 -- 1C Example Output
 emp_no	first_name	last_name	title	from_date	to_date
