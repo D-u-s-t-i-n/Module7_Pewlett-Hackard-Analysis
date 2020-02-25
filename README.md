@@ -97,7 +97,7 @@ ORDER BY
     from_date DESC;
 ```
 
-- 1B Example output descending by date:
+- 1B Example output descending by date:  
 I'm unable to copy/paste data output window, unless it is saved in table schema. Please advise.
 
 ### Part 1C - Who's Ready for a Mentor?
